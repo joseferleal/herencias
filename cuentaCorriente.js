@@ -1,15 +1,33 @@
+
+import {Cliente} from "./cliente.js";
 export class cuentaCorriente{
     
-    cliente;
+    #cliente;
     numero; 
     #saldo; 
     agencia;
+    static cantidadCuentas =0; //Con la palabra static definimos que este atributo es común para todas las cuentas
+
+
+    set cliente(valor){
+
+        if(valor instanceof Cliente){
+            this.#cliente=valor;
+        }
+        
+    }
+
+    get cliente(){
+        return this.#cliente;
+    }
     
-    constructor(){ //Valores o procedimientos por defecto
-        this.cliente=null;
+    constructor(cliente, numero, agencia){ //Un constructor son valores o procedimientos por defecto. El saldo lo recibo en cero
+        this.cliente=cliente;
+        /* this.#cliente=null; */
         this.#saldo=0;
-        this.numero="#####";
-        this.agencia=" ";
+        this.numero=numero;
+        this.agencia=agencia;
+        cuentaCorriente.cantidadCuentas++; ///El total de cuentas que hay
     };
     
     
