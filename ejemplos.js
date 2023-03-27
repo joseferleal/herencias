@@ -1,6 +1,7 @@
 import{Cliente} from "./cliente.js"
-import{cuentaCorriente} from "./cuentaCorriente.js";
-import { cuentaAhorro } from "./cuentaAhorro.js";
+/* import{cuentaCorriente} from "./cuentaCorriente.js";
+import { cuentaAhorro } from "./cuentaAhorro.js";*/
+import { cuenta } from "./cuenta.js";
 
 
 /* 
