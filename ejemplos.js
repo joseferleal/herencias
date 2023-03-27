@@ -1,5 +1,6 @@
 import{Cliente} from "./cliente.js"
 import{cuentaCorriente} from "./cuentaCorriente.js";
+import { cuentaAhorro } from "./cuentaAhorro.js";
 
 
 /* 
@@ -53,3 +54,10 @@ console.log(cuentaMaria.cliente);
 console.log(cuentaCorriente.cantidadCuentas);
 new cuentaCorriente(cliente, 22, 1001);
 console.log(cuentaCorriente.cantidadCuentas);
+
+
+
+////////////////////////////Cuenta de ahorros
+
+const cuentaAhorroLeonardo= new cuentaAhorro(cliente, 1001);
+console.log(cuentaAhorroLeonardo);
