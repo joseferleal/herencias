@@ -41,12 +41,18 @@ export class cuenta{
     };
 
     
-    retirarDeCuenta(valor, comision){
+    retirarDeCuenta(valor){
+       _retirarDeCuenta(valor, 0);
+        
+    };
+
+    _retirarDeCuenta(valor, comision){
         if(this.tipo=="Corriente"){valor=valor*(1+(comision/100));}else if(this.tipo="Ahorros"){valor=valor*(1+(comision/100))};
         if(valor<=this.#saldo){this.#saldo-=valor; return this.#saldo;
         }else{console.log("No es posible dicho retiro"); return this.#saldo;};
         
     };
+
 
 
     prueba(){console.log("Método padre")};

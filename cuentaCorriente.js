@@ -11,7 +11,7 @@ export class cuentaCorriente extends cuenta{
         cuentaCorriente.cantidadCuentas++; ///El total de cuentas que hay
     };
     retirarDeCuenta(valor){
-      super.retirarDeCuenta(valor, 5);
+      super._retirarDeCuenta(valor, 5);
       
   };
     prueba(){
