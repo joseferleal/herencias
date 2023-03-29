@@ -1,7 +1,6 @@
 import{Cliente} from "./cliente.js"
-/* import{cuentaCorriente} from "./cuentaCorriente.js";
-import { cuentaAhorro } from "./cuentaAhorro.js";*/
-import { cuenta } from "./cuenta.js";
+import{cuentaCorriente} from "./cuentaCorriente.js";
+import {cuentaAhorro} from "./cuentaAhorro.js";
 
 
 /* 
@@ -12,67 +11,23 @@ cliente.rutCliente=879797; */
 /*Luego de exportar el constructor, podemos escribir así*/
 const cliente = new Cliente("Leonardo",789797, 4448);
 const cliente2 = new Cliente("María", 7777, 78787878);
-/* cliente2.nombreCliente= "Maria";
-cliente2.dniCliente=4266664;
-cliente2.rutCliente=434437;
- */
-
-/*const cuentaLeonardo= new cuentaCorriente(cliente, 1, 1001);
-/* cuentaLeonardo.numero=1;
-cuentaLeonardo.agencia=1001;
-cuentaLeonardo.setCliente=cliente;
- */
-/*const cuentaMaria= new cuentaCorriente(cliente2, 2, 1002);
-/* cuentaMaria.numero=2;
-cuentaMaria.agencia=1002;
-cuentaMaria.setCliente=cliente2; */
 
 
-/* console.log(cuentaLeonardo);
-let saldo=cuentaLeonardo.verSaldo();
-console.log("el saldo actual es " + saldo);
- */
+///////////////////////////
 
-/* cuentaLeonardo.saldo=0; ya no lo necesito, porque tengo un constructor */
-
-//cuentaLeonardo.depositoEnCuenta(150);
-//saldo=cuentaLeonardo.verSaldo(); ///Se puede así
-/* console.log("el saldo actual es " + saldo);
-saldo=cuentaLeonardo.retirarDeCuenta(70);
-console.log("el saldo actual es " + saldo);
-saldo=cuentaLeonardo.retirarDeCuenta(70);
-console.log("el saldo actual es " + saldo);
-saldo=cuentaLeonardo.depositoEnCuenta(90);
-console.log("el saldo actual es " + saldo);
- */
-///Instancia del cliente María
-/* cuentaLeonardo.transferirParaCuenta(100, cuentaMaria)
-const saldoMaria=cuentaMaria.verSaldo();
-console.log("el saldo actual de María es  " + saldoMaria);
-const saldoLeonardo=cuentaLeonardo.verSaldo();
-console.log("el saldo actual de Leonardo es " + saldoLeonardo);
-console.log(cuentaMaria);
-console.log(cuentaMaria.cliente); */
-
-//Conteo del total de cuentas en todo el banco
-/* console.log(cuentaCorriente.cantidadCuentas);
-new cuentaCorriente(cliente, 22, 1001);
-console.log(cuentaCorriente.cantidadCuentas); */
-
-
-
-////////////////////////////Cuenta de ahorros
-
-const cuentaAhorroLeonardo= new cuenta("Ahorros", 1, 1001, cliente, 5000);
+const cuentaAhorroLeonardo= new cuentaAhorro(1, 1001, cliente, 0);
 console.log(cuentaAhorroLeonardo);
-
-const cuentaMaria= new cuenta(2, 1002, cliente2,6000);
+const cuentaMaria= new cuentaCorriente(2, 1002, cliente2);
 console.log(cuentaMaria);
-
-
-const cuentaLeonardo= new cuenta("Corriente", 2, 1001, cliente, 4000);
+const cuentaLeonardo= new cuentaCorriente(2, 1001, cliente);
 cuentaAhorroLeonardo.depositoEnCuenta(150);
+console.log(cuentaAhorroLeonardo.verSaldo());
+cuentaAhorroLeonardo.prueba();
+cuentaMaria.prueba();
 cuentaAhorroLeonardo.retirarDeCuenta(50);
 console.log(cuentaAhorroLeonardo.verSaldo());
-cuentaLeonardo.retirarDeCuenta(1000);
-console.log(cuentaLeonardo.verSaldo());
+console.log(cuentaMaria.verSaldo());
+
+cuentaMaria.depositoEnCuenta(150);
+cuentaMaria.retirarDeCuenta(25);
+console.log(cuentaMaria.verSaldo());
