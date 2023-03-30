@@ -1,6 +1,11 @@
 import{Cliente} from "./cliente.js"
-import{cuentaCorriente} from "./cuentaCorriente.js";
-import {cuentaAhorro} from "./cuentaAhorro.js";
+import{cuentaCorriente} from "./Cuentas/cuentaCorriente.js";
+import {cuentaAhorro} from "./Cuentas/cuentaAhorro.js";
+import { cuenta } from "./Cuentas/cuenta.js";
+import { cuentaNomina } from "./Cuentas/cuentaNomina.js";
+import { Empleado } from "./Empleados/empleado.js";
+import { Gerente } from "./Empleados/gerente.js";
+import { Director } from "./Empleados/director.js";
 
 
 /* 
@@ -13,7 +18,7 @@ const cliente = new Cliente("Leonardo",789797, 4448);
 const cliente2 = new Cliente("María", 7777, 78787878);
 
 
-///////////////////////////
+///////////////////////////CREACIÓN DE CUENTAS//////////////////////////
 
 const cuentaAhorroLeonardo= new cuentaAhorro(1, 1001, cliente, 0);
 console.log(cuentaAhorroLeonardo);
@@ -31,3 +36,34 @@ console.log(cuentaMaria.verSaldo());
 cuentaMaria.depositoEnCuenta(150);
 cuentaMaria.retirarDeCuenta(25);
 console.log(cuentaMaria.verSaldo());
+console.log(cuentaLeonardo);
+
+
+//Acá se para la ejecución del programa, porque no se puede instanciar. Es una manera de proteger la clase
+/* 
+const cuentaSimple= new cuenta(3, 1001, cliente, 500);
+console.log(cuentaSimple); 
+
+
+console.log(cuentaMaria.verSaldo()); */
+
+const cuentaNominaLeonardo= new cuentaNomina(3, 1001, cliente, 500);
+console.log(cuentaNominaLeonardo);
+
+cuentaNominaLeonardo.depositoEnCuenta(200);
+console.log(cuentaNominaLeonardo.verSaldo());
+cuentaNominaLeonardo.retirarDeCuenta(200);
+console.log(cuentaNominaLeonardo.verSaldo());
+
+//////////////////////////////CREACIÓN DE EMPLEADOS/////////////////////////////
+const empleado = new Empleado("Juan Gónez", 223232, 1000 );
+const gerente= new Gerente("Pedro Alonso", 4345345, 2000);
+const director= new Director("Elena R", 3424242, 3000);
+
+console.log(empleado);
+console.log(gerente);
+console.log(director);
+
+console.log(empleado.verBono());
+console.log(gerente.verBono());
+console.log(director.verBono());

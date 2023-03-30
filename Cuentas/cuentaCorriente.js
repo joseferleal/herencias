@@ -1,5 +1,3 @@
-
-import {Cliente} from "./cliente.js";
 import {cuenta} from "./cuenta.js";
 export class cuentaCorriente extends cuenta{
     
